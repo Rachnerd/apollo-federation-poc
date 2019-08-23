@@ -1,0 +1,10 @@
+schema:
+ - ./item-service.graphql
+overwrite: true
+generates:
+  ./.generated/gql.model.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+    config:
+      federation: true

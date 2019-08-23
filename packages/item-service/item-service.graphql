@@ -1,0 +1,25 @@
+type Query {
+    item(id: ID): ItemResult
+}
+
+type Item @key(fields: "id") @key(fields: "quantity") {
+    id: ID!
+    quantity: Int!
+    name: String!
+    description: String!
+    min: Int!
+    rounding: Int!
+}
+
+type ItemNotFound {
+    id: ID!
+}
+
+union ItemResult = Item | ItemNotFound
+
+
+extend type ItemResults @key(fields: "ids") {
+    ids: [ID!]! @external
+    content: [ItemResult!]!
+}
+

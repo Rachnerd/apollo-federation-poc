@@ -1,0 +1,14 @@
+type Query {
+    netPrice(id: ID!, quantity: Float!): Price!
+}
+
+type Price {
+    value: String!
+    currency: String!
+}
+
+extend type Item @key(fields: "id") {
+    id: ID! @external
+    quantity: Int! @external
+    netPrice: Price! @requires(fields: "quantity")
+}

@@ -1,0 +1,27 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e ts,graphql --exec ts-node --delay 6 ./gateway.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/federation": "^0.9.0",
+    "@apollo/gateway": "^0.10.0",
+    "apollo-server": "^2.9.0",
+    "graphql": "^14.5.1"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^12.7.2",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3",
+    "wait-on": "^3.3.0"
+  }
+}
