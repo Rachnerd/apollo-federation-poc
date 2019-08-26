@@ -38,9 +38,10 @@ export const resolvers: Resolvers = {
         }
     },
     ItemResults: {
-        content: pagination => {
+        content: ({ids}) => {
             console.log(`Resolve Items: ["1", "2", "3"]`);
-            return pagination.ids.map(id =>
+
+            return ids.map(id =>
                 id === "1"
                     ? item1 : id === "2"
                     ? item2
